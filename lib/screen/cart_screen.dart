@@ -126,7 +126,7 @@ class _CartScreenState extends State<CartScreen> {
                   itemCount: cartList.length,
                 ),
               )
-            : Center(child: Text('Empty cart, please add some item')),
+            : Center(child: Text('The cart is empty, please add some item')),
       ),
     );
   }
@@ -138,7 +138,10 @@ class _CartScreenState extends State<CartScreen> {
   deleteItemCart(int foodId) {
     setState(() {
       cartList.removeWhere((cartItem) => cartItem.foodId == foodId);
-      if (cartList.length == 0) {}
+      if (cartList.length == 0) {
+        final snackBar = SnackBar(content: Text('Item deleted'));
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
     });
   }
 }

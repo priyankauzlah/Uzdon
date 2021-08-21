@@ -25,6 +25,9 @@ class CheckoutScreen extends StatelessWidget {
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
       ),
+      body: Container(
+        color: Colors.black,
+      ),
     );
   }
 }

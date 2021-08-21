@@ -29,7 +29,8 @@ class _DetailScreenState extends State<DetailScreen> {
             Stack(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 70, bottom: 5, right: 20, left: 20),
+                  padding:
+                      EdgeInsets.only(top: 70, bottom: 5, right: 20, left: 20),
                   color: Colors.white,
                   child: Image.network(
                     widget.food.foodImage,
@@ -105,12 +106,9 @@ class _DetailScreenState extends State<DetailScreen> {
                               ),
                             ],
                           ),
-
                         ],
                       ),
-                      Text(
-                          rupiahCurrencyFormat
-                              .format(widget.food.foodPrice),
+                      Text(rupiahCurrencyFormat.format(widget.food.foodPrice),
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 20,
@@ -119,7 +117,8 @@ class _DetailScreenState extends State<DetailScreen> {
                       Text('Description',
                           style: TextStyle(
                               fontSize: 24,
-                              color: Colors.white, fontWeight: FontWeight.w500)),
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500)),
                       SizedBox(height: 8),
                       Text(
                         widget.food.foodDescription,
@@ -127,7 +126,6 @@ class _DetailScreenState extends State<DetailScreen> {
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                       SizedBox(height: 177),
-
                       Container(
                         padding: EdgeInsets.only(top: 20),
                         color: Colors.black,
@@ -156,7 +154,9 @@ class _DetailScreenState extends State<DetailScreen> {
                                     }));
                                   },
                                   child: Text('Buy Now',
-                                      style: TextStyle(color: Color.fromARGB(203, 153, 3, 1))),
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(203, 153, 3, 1))),
                                 ),
                               ),
                             ),
@@ -181,13 +181,13 @@ class _DetailScreenState extends State<DetailScreen> {
       isItemExist = true;
     }
     if (isItemExist) {
-      final snackBar = SnackBar(content: Text('Item already in cart !'));
+      final snackBar = SnackBar(content: Text('Item is already in the cart!'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else {
       setState(() {
         cartList.add(Cart(foodId: foodId));
       });
-      final snackBar = SnackBar(content: Text('Item added to cart !'));
+      final snackBar = SnackBar(content: Text('Item added to the cart!'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
